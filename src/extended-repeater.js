@@ -20,7 +20,7 @@ function repeater(str, options) {
         str = String(str)
     }
     let add = Array(options.additionRepeatTimes ? options.additionRepeatTimes : 1)
-        .fill(options.addition !== undefined ? String(options.addition,true): '')
+        .fill(options.addition !== undefined ? String(options.addition): '')
         .join(options.additionSeparator ? options.additionSeparator : '|')
 
     return Array(options.repeatTimes ? options.repeatTimes : 1)
