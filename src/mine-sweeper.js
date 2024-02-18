@@ -44,11 +44,6 @@ function minesweeper(matrix) {
     return arr
 }
 
-console.log(minesweeper([
-    [true, false, false],
-    [false, true, false],
-    [false, false, false],
-]))
 
 module.exports = {
     minesweeper
