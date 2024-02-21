@@ -5,7 +5,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * array contains
  * 
  * @param {Array} arr initial array
- * @returns {Array} transformed array
+ * @returns {Error} transformed array
  * 
  * @example
  * 
@@ -13,10 +13,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
-function transform(/* arr */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function transform(arr) {
+//write with switch case
 }
+
+console.log(transform([1, 2, 3, '--discard-next', 4, 5]))
 
 module.exports = {
   transform
