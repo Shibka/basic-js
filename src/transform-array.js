@@ -14,7 +14,40 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function transform(arr) {
-//write with switch case
+  if(!Array.isArray(arr)){
+    throw new Error("\'arr\' parameter must be an instance of the Array!")
+  }
+  const a = []
+  for (let i =0; i < arr.length; i++){
+    switch (arr[i]){
+      case '--double-next':{
+        if (i < arr.length-1)
+        a.push(arr[i+1])
+      }
+        break;
+      case '--double-prev':{
+        if(i > 0 && arr[i-2] !== '--discard-next'){
+          a.push(arr[i-1])
+        }
+      }
+      break;
+      case '--discard-next': {
+        if (i < arr.length - 1){
+          i++
+        }
+      }
+      break;
+      case '--discard-prev': {
+        if(i > 0 && arr[i-2] !== '--discard-next'){
+          a.pop()
+        }
+      }
+      break;
+      default:
+        a.push(arr[i])
+    }
+  }
+return a
 }
 
 console.log(transform([1, 2, 3, '--discard-next', 4, 5]))
